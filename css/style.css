@@ -30,6 +30,12 @@ body {
     transition: transform .6s ease .8s;
 }
 
+.wrapper._free .page__pagination {
+    transform: translate(50px, -50%);
+    opacity: 0;
+    transition: all .3s ease 0s;
+}
+
 .header {
     position: fixed;
     width: 100%;
@@ -85,6 +91,8 @@ a.menu__link._active {
     padding: 100px 25px 25px 70px;
     position: relative;
     z-index: 2;
+    height: 100%;
+    background-color: rgb(77 82 71 / 68%);
 }
 
 .screen__title {
@@ -169,6 +177,13 @@ a.menu__link._active {
     cursor: pointer;
 }
 
+.page__screen h1 {
+    position: relative;
+    z-index: 3;
+    top: 140px;
+    left: 86px;
+}
+
 .screen__text-title {
     font-size: 36px;
     color: #fff;
@@ -182,25 +197,20 @@ a.menu__link._active {
 .screen__text {
     font-size: 24px;
     line-height: 124%;
-    background-color: rgb(111 116 106);
     color: #fff;
-    padding: 50px;
     font-weight: 400;
+    max-width: 50%;
+    margin-right: 20px;
 }
 
 .screen__text-group {
     display: flex;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 86px;
 }
 
 .screen__text-group p {
     margin-bottom: 30px;
-}
-
-.screen__text-txt {
-    max-width: 50%;
-    margin-right: 20px;
 }
 
 .screen__text-img {
@@ -215,7 +225,83 @@ a.menu__link._active {
 .screen__text-group img {
     width: 100%;
     border-radius: 10px;
-
     filter: saturate(0.7);
     opacity: .8;
+}
+
+@media(max-width: 1500px) {
+    .screen__content {
+        padding: 80px 30px 0;
+    }
+
+    .screen__text-group {
+        padding: 0 50px;
+    }
+
+    .screen__text {
+        padding-top: 30px;
+    }
+}
+
+@media(max-width: 1100px) {
+    .screen__text-group {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .screen__text {
+        max-width: unset;
+    }
+
+    .screen__text-img {
+        margin-top: 30px;
+    }
+
+    .screen__content {
+        padding: 80px 30px 50px;
+    }
+}
+
+@media(max-width: 700px) {
+    .screen__text-img {
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .screen__text {
+        transform: none !important;
+    }
+}
+
+@media(max-width: 560px) {
+    .page__screen h1 {
+        left: unset;
+        display: flex;
+    }
+
+    .screen__text-img {
+        display: none;
+    }
+
+    .screen__content {
+        padding: 80px 30px 0;
+    }
+
+    .screen__text-group {
+        padding: 0 10px;
+    }
+
+}
+
+@media(max-width: 460px) {
+    .header {
+        padding: 0 10px;
+    }
+
+    a.menu__link {
+        font-size: 14px;
+        margin-right: 16px;
+    }
 }
