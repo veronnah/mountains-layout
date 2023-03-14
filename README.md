@@ -1,2 +1,2 @@
 # mountains-layout
-https://veronnah.github.io/mountains-landing/
+https://veronnah.github.io/mountains-layout/
